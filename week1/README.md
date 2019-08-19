@@ -554,7 +554,7 @@ Let A and B be matrices. Then in general,
   
 **Associative**
   
-<p align="center"><img src="https://latex.codecogs.com/gif.latex?A%20&#x5C;ast%20B%20&#x5C;ast%20C.%20&#x5C;newline%20Let%20~%20D%20=%20B%20&#x5C;ast%20C.%20~%20Compute%20A%20&#x5C;ast%20D.%20&#x5C;newline%20Let%20~%20E%20=%20A%20&#x5C;ast%20B.%20~%20Compute%20E%20&#x5C;ast%20C."/></p>  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?A%20&#x5C;ast%20B%20&#x5C;ast%20C.%20&#x5C;newline%20&#x5C;text{Let}%20~%20D%20=%20B%20&#x5C;ast%20C.%20~%20&#x5C;text{Compute%20}%20A%20&#x5C;ast%20D.%20&#x5C;newline%20&#x5C;text{Let}%20~%20E%20=%20A%20&#x5C;ast%20B.%20~%20&#x5C;text{Compute%20}%20E%20&#x5C;ast%20C."/></p>  
   
   
 **Identity Matrix**

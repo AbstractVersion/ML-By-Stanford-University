@@ -580,8 +580,8 @@ $$
 
 $$
  A \ast B \ast C. \newline
- Let ~ D = B \ast C. ~ Compute A \ast D. \newline
- Let ~ E = A \ast B. ~ Compute E \ast C.
+ \text{Let} ~ D = B \ast C. ~ \text{Compute } A \ast D. \newline
+ \text{Let} ~ E = A \ast B. ~ \text{Compute } E \ast C.
  $$
 
 **Identity Matrix**
