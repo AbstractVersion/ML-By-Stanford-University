@@ -25,7 +25,7 @@ Example: Playing checkers
   
 **Question**
   
-Suppose your email program wtacges which emails you do or do not mark as spam, and based on that learns how to better filter spam. What is task T in this setting?
+Suppose your email program watches which emails you do or do not mark as spam, and based on that learns how to better filter spam. What is task T in this setting?
   
 _Answer:_ Classifying emails as spam or not spam.
   
@@ -156,15 +156,15 @@ _Answer:_ θ<sub>0</sub>=0.5, θ<sub>1</sub> = 1
 If we try to think of it in visual terms, our training data set is scattered on the x-y plane. We are trying to make a straight line (defined by <p align="center"><img src="https://latex.codecogs.com/gif.latex?h_θ({x})"/></p>  
 ) which passes through these scattered data points.
   
-Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least. Ideally, the line should pass through all the points of our training data set. In such a case, the value of  <p align="center"><img src="https://latex.codecogs.com/gif.latex?J({θ_1,%20θ_2})%20=%200"/></p>  
+Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least. Ideally, the line should pass through all the points of our training data set. In such a case, the value of  <p align="center"><img src="https://latex.codecogs.com/gif.latex?J({&#x5C;theta_1,%20&#x5C;theta_2})%20=%200"/></p>  
   
   
 The following example shows the ideal situation where we have a cost function of 0.
   
 ![Cost Intuition pic](./images/CostInt1.png )
   
-When <p align="center"><img src="https://latex.codecogs.com/gif.latex?θ_1%20=%201"/></p>  
-, we get a slope of 1 which goes through every single data point in our model. Conversely, when <p align="center"><img src="https://latex.codecogs.com/gif.latex?θ_1%20=%200.5"/></p>  
+When <p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;theta_1%20=%201"/></p>  
+, we get a slope of 1 which goes through every single data point in our model. Conversely, when <p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;theta_1%20=%200.5"/></p>  
 , we see the vertical distance from our fit to the data points increase.
   
 ![Cost Intuition pic](./images/CostInt2.png )
@@ -183,9 +183,9 @@ Thus as a goal, we should try to minimize the cost function. In this case, <p al
 Suppose we have a training set with m=3 examples, plotted below. Our hypothesis representation is <p align="center"><img src="https://latex.codecogs.com/gif.latex?h_&#x5C;theta(x)%20=%20&#x5C;theta_1x"/></p>  
   
   
-The cost of the function <p align="center"><img src="https://latex.codecogs.com/gif.latex?J(θ_1)"/></p>  
+The cost of the function <p align="center"><img src="https://latex.codecogs.com/gif.latex?J(&#x5C;theta_1)"/></p>  
  is
-<p align="center"><img src="https://latex.codecogs.com/gif.latex?J(θ_1)=%20%201&#x2F;2m%20&#x5C;sum%20_{i=1}^m%20&#x5C;left%20(h_&#x5C;theta%20(x_{i})%20-%20y_{i}%20&#x5C;right)^2."/></p>  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?J(&#x5C;theta_1)=%20%201&#x2F;2m%20&#x5C;sum%20_{i=1}^m%20&#x5C;left%20(h_&#x5C;theta%20(x_{i})%20-%20y_{i}%20&#x5C;right)^2."/></p>  
   
 Whats is `J(0)`?
   
@@ -366,4 +366,263 @@ _Incorrect_
 * Gradient descent is guaranteed to find the global minimum for any function <p align="center"><img src="https://latex.codecogs.com/gif.latex?J(&#x5C;theta_0,%20&#x5C;theta_1)"/></p>  
   
 ---
+  
+##  Linear Algebra
+  
+  
+###  Matrices and vectors
+  
+  
+###  Matrices
+  
+Dimension of matrix: number of rows x number of columns
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{bmatrix}%20%20%201402%20&amp;%20191%20%20&#x5C;&#x5C;%20%20%201371%20&amp;%20821%20%20&#x5C;&#x5C;%20%20%20949%20%20&amp;%201437%20&#x5C;&#x5C;%20%20%20147%20%20&amp;%201448&#x5C;end{bmatrix}"/></p>  
+  
+  
+This example, this has 1, 2, 3, 4 rows and has 2 columns, and so this example  is a 4 by 2 matrix <p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;R^{4x2}"/></p>  
+  - number of rows by number of columns.
+  
+**Matrix Elements(entries of matrix)**
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;Alpha%20=%20%20%20%20&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%201402%20&amp;%20191%20%20&#x5C;&#x5C;%20%20%20%20%20%20%20%201371%20&amp;%20821%20%20&#x5C;&#x5C;%20%20%20%20%20%20%20%20949%20%20&amp;%201437%20&#x5C;&#x5C;%20%20%20%20%20%20%20%20147%20%20&amp;%201448%20%20%20%20&#x5C;end{bmatrix}&#x5C;newline%20&#x5C;newline&#x5C;Alpha_{ij}%20=%20&#x5C;text{&quot;i,j%20entry&quot;%20in%20the%20ith%20row,%20jth%20column}"/></p>  
+  
+  
+For example:
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;Alpha_{11}%20=%201402&#x5C;newline&#x5C;Alpha_{12}%20=%20191"/></p>  
+  
+  
+###  Vectors
+  
+  
+**Vector** An n x 1 matrix
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;psi%20=%20%20%20%20&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%20460%20&#x5C;&#x5C;%20%20%20%20%20%20%20%20232%20&#x5C;&#x5C;%20%20%20%20%20%20%20%20315%20&#x5C;&#x5C;%20%20%20%20%20%20%20%20178%20%20%20%20%20&#x5C;end{bmatrix}&#x5C;newline&#x5C;psi{ij}%20=%20&#x5C;text{&quot;th%20element}"/></p>  
+  
+  
+For example:
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;psi_2%20=%20232"/></p>  
+  
+  
+**Notation and terms:**
+  
+* A<sub>ij</sub> refers to the element in the ith row and jth column of matrix A.
+* A vector with 'n' rows is referred to as an 'n'-dimensional vector.
+* v<sub>i</sub> refers to the element in the ith row of the vector.
+* In general, all our vectors and matrices will be 1-indexed. Note that for some programming languages, the arrays are 0-indexed.
+* Matrices are usually denoted by uppercase names while vectors are lowercase.
+* "Scalar" means that an object is a single value, not a vector or matrix.
+* R refers to the set of scalar real numbers.
+* R<sup>n</sup> refers to the set of n-dimensional vectors of real numbers.
+  
+```
+% The ; denotes we are going back to a new row.
+A = [1, 2, 3; 4, 5, 6; 7, 8, 9; 10, 11, 12]
+  
+% Initialize a vector 
+v = [1;2;3] 
+  
+% Get the dimension of the matrix A where m = rows and n = columns
+[m,n] = size(A)
+  
+% You could also store it this way
+dim_A = size(A)
+  
+% Get the dimension of the vector v 
+dim_v = size(v)
+  
+% Now let's index into the 2nd row 3rd column of matrix A
+A_23 = A(2,3)
+```
+  
+###  Addition and Scalar Multiplication
+  
+  
+**Matrix Addition**
+  
+Addition and subtraction are element-wise, so you simply add or subtract each corresponding element:
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%201%20&amp;&amp;%200%20&#x5C;&#x5C;%20%20%20%20%20%20%20%202%20&amp;&amp;%205%20&#x5C;&#x5C;%20%20%20%20%20%20%20%203%20&amp;&amp;%201%20%20%20%20&#x5C;end{bmatrix}+%20%20%20%20&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%204%20&amp;&amp;%200.5%20&#x5C;&#x5C;%20%20%20%20%20%20%20%202%20&amp;&amp;%205%20&#x5C;&#x5C;%20%20%20%20%20%20%20%200%20&amp;&amp;%201%20%20%20%20&#x5C;end{bmatrix}%20=%20%20%20%20%20&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%205%20&amp;&amp;%200.5%20&#x5C;&#x5C;%20%20%20%20%20%20%20%204%20&amp;&amp;%2010%20&#x5C;&#x5C;%20%20%20%20%20%20%20%203%20&amp;&amp;%202%20%20%20%20&#x5C;end{bmatrix}"/></p>  
+  
+  
+To add or subtract two matrices, their dimensions must be **the same**.
+  
+**Scalar Multiplication**
+  
+In scalar multiplication and division you make the operation element-wise.
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%201%20&amp;&amp;%200%20&#x5C;&#x5C;%20%20%20%20%20%20%20%202%20&amp;&amp;%205%20&#x5C;&#x5C;%20%20%20%20%20%20%20%203%20&amp;&amp;%201%20%20%20%20&#x5C;end{bmatrix}&#x5C;ast%203%20%20=%203%20&#x5C;ast%20%20%20%20&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%201%20&amp;&amp;%200%20&#x5C;&#x5C;%20%20%20%20%20%20%20%202%20&amp;&amp;%205%20&#x5C;&#x5C;%20%20%20%20%20%20%20%203%20&amp;&amp;%201%20%20%20%20&#x5C;end{bmatrix}%20=%20%20%20%20%20&#x5C;begin{bmatrix}%20%20%20%20%20%20%20%203%20&amp;&amp;%200%20&#x5C;&#x5C;%20%20%20%20%20%20%20%206%20&amp;&amp;%2015%20&#x5C;&#x5C;%20%20%20%20%20%20%20%209%20&amp;&amp;%203%20%20%20%20&#x5C;end{bmatrix}"/></p>  
+  
+  
+Experiment below with the Octave/Matlab commands for matrix addition and scalar multiplication. Feel free to try out different commands. Try to write out your answers for each command before running the cell below.
+  
+```
+% Initialize matrix A and B 
+A = [1, 2, 4; 5, 3, 2]
+B = [1, 3, 4; 1, 1, 1]
+  
+% Initialize constant s 
+s = 2
+  
+% See how element-wise addition works
+add_AB = A + B 
+  
+% See how element-wise subtraction works
+sub_AB = A - B
+  
+% See how scalar multiplication works
+mult_As = A * s
+  
+% Divide A by s
+div_As = A / s
+  
+% What happens if we have a Matrix + scalar?
+add_As = A + s
+```
+  
+**Matrix-vector multiplication**
+  
+We map the column of the vector onto each row of the matrix, multiplying each element and summing the result.
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{bmatrix}%20a%20&amp;%20b%20&#x5C;&#x5C;%20c%20&amp;%20d%20&#x5C;&#x5C;%20e%20&amp;%20f%20&#x5C;end{bmatrix}%20*&#x5C;begin{bmatrix}%20x%20&#x5C;&#x5C;%20y%20&#x5C;&#x5C;%20&#x5C;end{bmatrix}%20=&#x5C;begin{bmatrix}%20a*x%20+%20b*y%20&#x5C;&#x5C;%20c*x%20+%20d*y%20&#x5C;&#x5C;%20e*x%20+%20f*y&#x5C;end{bmatrix}"/></p>  
+  
+  
+The result is a vector. The number of columns of the matrix must equal the number of rows of the vector.
+  
+An m x n matrix multiplied by an n x 1 vector results in an m x 1 vector.
+  
+For example:
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{bmatrix}%20%20%201%20&amp;%203%20&#x5C;&#x5C;%20%20%204%20&amp;%200%20&#x5C;&#x5C;%20%20%202%20&amp;%201&#x5C;end{bmatrix}%20&#x5C;ast&#x5C;begin{bmatrix}%20%20%20%201%20&#x5C;&#x5C;%20%20%20%205&#x5C;end{bmatrix}%20=&#x5C;begin{bmatrix}%20%20%20%2016%20&#x5C;&#x5C;%20%20%20%204%20&#x5C;&#x5C;%20%20%20%207&#x5C;end{bmatrix}"/></p>  
+  
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?1%20&#x5C;ast%201%20+%203%20&#x5C;ast%205%20=%2016%20&#x5C;newline4%20&#x5C;ast%201%20+%200%20&#x5C;ast%205%20=%204%20&#x5C;newline2%20&#x5C;ast%201%20+%201%20&#x5C;ast%205%20=%207"/></p>  
+  
+  
+Below is an example of a matrix-vector multiplication. Make sure you understand how the multiplication works. Feel free to try different matrix-vector multiplications.
+  
+```
+% Initialize matrix A 
+A = [1, 2, 3; 4, 5, 6;7, 8, 9] 
+  
+% Initialize vector v 
+v = [1; 1; 1] 
+  
+% Multiply A * v
+Av = A * v
+```
+  
+###  Matrix Matrix Multiplication
+  
+  
+We multiply two matrices by breaking it into several vector multiplications and concatenating the result.
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{bmatrix}%20a%20&amp;%20b%20&#x5C;&#x5C;%20c%20&amp;%20d%20&#x5C;&#x5C;%20e%20&amp;%20f%20&#x5C;end{bmatrix}%20*&#x5C;begin{bmatrix}%20w%20&amp;%20x%20&#x5C;&#x5C;%20y%20&amp;%20z%20&#x5C;&#x5C;%20&#x5C;end{bmatrix}%20=&#x5C;begin{bmatrix}%20a*w%20+%20b*y%20&amp;%20a*x%20+%20b*z%20&#x5C;&#x5C;%20c*w%20+%20d*y%20&amp;%20c*x%20+%20d*z%20&#x5C;&#x5C;%20e*w%20+%20f*y%20&amp;%20e*x%20+%20f*z&#x5C;end{bmatrix}"/></p>  
+  
+  
+An m x n matrix multiplied by an n x o matrix results in an m x o matrix. In the above example, a 3 x 2 matrix times a 2 x 2 matrix resulted in a 3 x 2 matrix.
+  
+To multiply two matrices, the number of columns of the first matrix must equal the number of rows of the second matrix.
+  
+For example:
+  
+```
+% Initialize a 3 by 2 matrix 
+A = [1, 2; 3, 4;5, 6]
+  
+% Initialize a 2 by 1 matrix 
+B = [1; 2] 
+  
+% We expect a resulting matrix of (3 by 2)*(2 by 1) = (3 by 1) 
+mult_AB = A*B
+  
+% Make sure you understand why we got that result
+```
+  
+###  Matrix Multiplication Properties
+  
+  
+**Commutative**
+  
+Let A and B be matrices. Then in general, 
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?A%20&#x5C;ast%20B%20&#x5C;not%20=%20B%20&#x5C;ast%20A"/></p>  
+  
+  
+  
+**Associative**
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?A%20&#x5C;ast%20B%20&#x5C;ast%20C.%20&#x5C;newline%20Let%20~%20D%20=%20B%20&#x5C;ast%20C.%20~%20Compute%20A%20&#x5C;ast%20D.%20&#x5C;newline%20Let%20~%20E%20=%20A%20&#x5C;ast%20B.%20~%20Compute%20E%20&#x5C;ast%20C."/></p>  
+  
+  
+**Identity Matrix**
+  
+The identity matrix, when multiplied by any matrix of the same dimensions, results in the original matrix. It's just like multiplying numbers by 1. The identity matrix simply has 1's on the diagonal (upper left to lower right diagonal) and 0's elsewhere.
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;begin{bmatrix}%201%20&amp;%200%20&amp;%200%20&#x5C;&#x5C;%200%20&amp;%201%20&amp;%200%20&#x5C;&#x5C;%200%20&amp;%200%20&amp;%201%20&#x5C;&#x5C;%20&#x5C;end{bmatrix}"/></p>  
+  
+  
+When multiplying the identity matrix after some matrix (A∗I), the square identity matrix's dimension should match the other matrix's columns. When multiplying the identity matrix before some other matrix (I∗A), the square identity matrix's dimension should match the other matrix's rows.
+  
+```
+% Initialize random matrices A and B 
+A = [1,2;4,5]
+B = [1,1;0,2]
+  
+% Initialize a 2 by 2 identity matrix
+I = eye(2)
+  
+% The above notation is the same as I = [1,0;0,1]
+  
+% What happens when we multiply I*A ? 
+IA = I*A 
+  
+% How about A*I ? 
+AI = A*I 
+  
+% Compute A*B 
+AB = A*B 
+  
+% Is it equal to B*A? 
+BA = B*A 
+  
+% Note that IA = AI but AB != BA
+```
+  
+###  Inverse and Transpose
+  
+  
+The inverse of a matrix A is denoted <p align="center"><img src="https://latex.codecogs.com/gif.latex?A^{-1}"/></p>  
+. Multiplying by the inverse results in the identity matrix.
+  
+A non square matrix does not have an inverse matrix. We can compute inverses of matrices in octave with the pinv(A)pinv(A) function and in Matlab with the inv(A)inv(A) function. Matrices that don't have an inverse are singular or degenerate.
+  
+The transposition of a matrix is like rotating the matrix 90° in clockwise direction and then reversing it. We can compute transposition of matrices in matlab with the transpose(A) function or A':
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?A%20=%20&#x5C;begin{bmatrix}%20a%20&amp;%20b%20&#x5C;&#x5C;%20c%20&amp;%20d%20&#x5C;&#x5C;%20e%20&amp;%20f%20&#x5C;end{bmatrix}"/></p>  
+  
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?A^T%20=%20&#x5C;begin{bmatrix}%20a%20&amp;%20c%20&amp;%20e%20&#x5C;&#x5C;%20b%20&amp;%20d%20&amp;%20f%20&#x5C;&#x5C;%20&#x5C;end{bmatrix}"/></p>  
+  
+  
+In other words:
+  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?A_{ij}%20=%20A^T_{ji}"/></p>  
+  
+  
+```
+% Initialize matrix A 
+A = [1,2,0;0,5,6;7,0,9]
+  
+% Transpose A 
+A_trans = A' 
+  
+% Take the inverse of A 
+A_inv = inv(A)
+  
+% What is A^(-1)*A? 
+A_invA = inv(A)*A
+```
   
